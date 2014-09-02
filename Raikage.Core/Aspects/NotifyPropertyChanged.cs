@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Cirrious.MvvmCross.ViewModels;
+﻿using Cirrious.MvvmCross.ViewModels;
 using PostSharp.Aspects;
 using PostSharp.Serialization;
 
-namespace KitApp.Core.Aspects
+namespace Raikage.Core.Aspects
 {
 
     [PSerializable]

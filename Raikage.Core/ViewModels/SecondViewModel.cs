@@ -1,5 +1,4 @@
-using System.Windows.Input;
-using KitApp.Core.Aspects;
+using Raikage.Core.Aspects;
 using Raikage.Core.Base;
 
 namespace Raikage.Core.ViewModels
