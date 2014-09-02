@@ -5,21 +5,21 @@
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E7A4297E-3A49-45BE-9215-1E3FF372AE47}</ProjectGuid>
+    <ProjectGuid>{6162FDB3-A464-4A07-99E0-64214A9790C8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Raikage.Core</RootNamespace>
-    <AssemblyName>Raikage.Core</AssemblyName>
+    <RootNamespace>Raikage.Test.Core</RootNamespace>
+    <AssemblyName>Raikage.Test.Core</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <DontImportPostSharp>True</DontImportPostSharp>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <DontImportPostSharp>True</DontImportPostSharp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,10 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="Aspects\MvxNavigationCommand.cs" />
-    <Compile Include="Aspects\NotifyPropertyChanged.cs" />
-    <Compile Include="Base\BaseMvxViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validation\FirstViewModelValidator.cs" />
     <Compile Include="ViewModels\FirstViewModel.cs" />
     <Compile Include="ViewModels\SecondViewModel.cs" />
   </ItemGroup>
@@ -61,13 +59,19 @@
     <Reference Include="Cirrious.MvvmCross.Localization">
       <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\portable-win+net45+sl50+wp8+MonoAndroid+MonoTouch\Cirrious.MvvmCross.Localization.dll</HintPath>
     </Reference>
+    <Reference Include="FluentValidation">
+      <HintPath>..\packages\FluentValidation.5.4.0.0\lib\portable-win+net40+sl50+wp80\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="PostSharp">
       <HintPath>..\packages\PostSharp.3.1.49\lib\portable-windows8+net40+sl5+wp8+wpa81\PostSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ToDo-MvvmCross\_ Core.txt" />
+    <ProjectReference Include="..\Raikage.Core\RaikageFramework.csproj">
+      <Project>{e7a4297e-3a49-45be-9215-1e3ff372ae47}</Project>
+      <Name>RaikageFramework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\PostSharp.3.1.49\tools\PostSharp.targets" Condition="Exists('..\packages\PostSharp.3.1.49\tools\PostSharp.targets')" />

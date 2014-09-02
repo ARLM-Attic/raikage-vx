@@ -1,7 +1,7 @@
-using Raikage.Core.Aspects;
-using Raikage.Core.Base;
+using RaikageFramework.Aspects;
+using RaikageFramework.Base;
 
-namespace Raikage.Core.ViewModels
+namespace Raikage.Test.Core.ViewModels
 {
     [NotifyPropertyChanged]
     public class SecondViewModel

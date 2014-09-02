@@ -1,7 +1,7 @@
 ﻿using System;
 using Cirrious.MvvmCross.ViewModels;
 
-namespace Raikage.Core.Base
+namespace RaikageFramework.Base
 {
     public class BaseMvxViewModel : MvxViewModel
     {

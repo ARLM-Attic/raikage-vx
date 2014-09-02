@@ -2,9 +2,9 @@
 using Cirrious.MvvmCross.ViewModels;
 using PostSharp.Aspects;
 using PostSharp.Serialization;
-using Raikage.Core.Base;
+using RaikageFramework.Base;
 
-namespace Raikage.Core.Aspects
+namespace RaikageFramework.Aspects.Commands
 {
     [PSerializable]
     public class MvxNavigationCommand : LocationInterceptionAspect

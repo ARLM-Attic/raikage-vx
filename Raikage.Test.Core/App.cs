@@ -1,6 +1,6 @@
 using Cirrious.CrossCore.IoC;
 
-namespace Raikage.Core
+namespace Raikage.Test.Core
 {
     public class App : Cirrious.MvvmCross.ViewModels.MvxApplication
     {

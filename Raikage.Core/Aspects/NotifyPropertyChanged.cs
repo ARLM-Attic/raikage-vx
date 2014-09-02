@@ -2,11 +2,11 @@
 using PostSharp.Aspects;
 using PostSharp.Serialization;
 
-namespace Raikage.Core.Aspects
+namespace RaikageFramework.Aspects
 {
 
     [PSerializable]
-    class NotifyPropertyChanged : LocationInterceptionAspect
+    public class NotifyPropertyChanged : LocationInterceptionAspect
     {
         public override void OnSetValue(LocationInterceptionArgs args)
         {
