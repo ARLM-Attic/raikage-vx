@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aspects\Authentication\Authentication.cs" />
+    <Compile Include="Aspects\Commands\AutoCommand.cs" />
     <Compile Include="Aspects\Commands\MvxNavigationCommand.cs" />
     <Compile Include="Aspects\NotifyPropertyChanged.cs" />
     <Compile Include="Aspects\Utilites\Validate.cs" />

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using Cirrious.MvvmCross.ViewModels;
 using PostSharp.Aspects;
 using PostSharp.Serialization;

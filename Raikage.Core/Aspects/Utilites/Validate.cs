@@ -10,16 +10,16 @@ namespace RaikageFramework.Aspects.Utilites
     [PSerializable]
     public class Validate : OnMethodBoundaryAspect
     {
-        private IValidator _validator;
-
+        private Type _validator;
         public Validate(Type validator)
         {
-            _validator = (IValidator)validator.CreateDefault();
+            _validator = validator;
         }
 
         public override void OnEntry(MethodExecutionArgs args)
         {
-            var validationResult = _validator.Validate(args.Instance);
+            var validator = (IValidator)Activator.CreateInstance(_validator);
+            var validationResult = validator.Validate(args.Instance);
             if (validationResult.IsValid) return;
 
             ((IValidable)args.Instance).OnValidationFailed(args.Method.Name, validationResult.Errors);

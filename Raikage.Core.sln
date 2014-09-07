@@ -7,32 +7,65 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaikageFramework", "Raikage
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raikage.Test.Core", "Raikage.Test.Core\Raikage.Test.Core.csproj", "{6162FDB3-A464-4A07-99E0-64214A9790C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaikageFramework.Test.Core.Test", "RaikageFramework.Test.Core.Test\RaikageFramework.Test.Core.Test.csproj", "{15979E79-DCE0-448B-AFD4-DCED18C50897}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 3
+		SccNumberOfProjects = 4
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs06
 		SccLocalPath0 = .
-		SccProjectUniqueName1 = Raikage.Core\\RaikageFrameWork.csproj
+		SccProjectUniqueName1 = Raikage.Core\\RaikageFramework.csproj
 		SccProjectName1 = Raikage.Core
 		SccLocalPath1 = Raikage.Core
 		SccProjectUniqueName2 = Raikage.Test.Core\\Raikage.Test.Core.csproj
 		SccProjectName2 = Raikage.Test.Core
 		SccLocalPath2 = Raikage.Test.Core
+		SccProjectUniqueName3 = RaikageFramework.Test.Core.Test\\RaikageFramework.Test.Core.Test.csproj
+		SccProjectName3 = RaikageFramework.Test.Core.Test
+		SccLocalPath3 = RaikageFramework.Test.Core.Test
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E7A4297E-3A49-45BE-9215-1E3FF372AE47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E7A4297E-3A49-45BE-9215-1E3FF372AE47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7A4297E-3A49-45BE-9215-1E3FF372AE47}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{E7A4297E-3A49-45BE-9215-1E3FF372AE47}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E7A4297E-3A49-45BE-9215-1E3FF372AE47}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{E7A4297E-3A49-45BE-9215-1E3FF372AE47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7A4297E-3A49-45BE-9215-1E3FF372AE47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7A4297E-3A49-45BE-9215-1E3FF372AE47}.Release|ARM.ActiveCfg = Release|Any CPU
+		{E7A4297E-3A49-45BE-9215-1E3FF372AE47}.Release|x64.ActiveCfg = Release|Any CPU
+		{E7A4297E-3A49-45BE-9215-1E3FF372AE47}.Release|x86.ActiveCfg = Release|Any CPU
 		{6162FDB3-A464-4A07-99E0-64214A9790C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6162FDB3-A464-4A07-99E0-64214A9790C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6162FDB3-A464-4A07-99E0-64214A9790C8}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{6162FDB3-A464-4A07-99E0-64214A9790C8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6162FDB3-A464-4A07-99E0-64214A9790C8}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{6162FDB3-A464-4A07-99E0-64214A9790C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6162FDB3-A464-4A07-99E0-64214A9790C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6162FDB3-A464-4A07-99E0-64214A9790C8}.Release|ARM.ActiveCfg = Release|Any CPU
+		{6162FDB3-A464-4A07-99E0-64214A9790C8}.Release|x64.ActiveCfg = Release|Any CPU
+		{6162FDB3-A464-4A07-99E0-64214A9790C8}.Release|x86.ActiveCfg = Release|Any CPU
+		{15979E79-DCE0-448B-AFD4-DCED18C50897}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15979E79-DCE0-448B-AFD4-DCED18C50897}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15979E79-DCE0-448B-AFD4-DCED18C50897}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{15979E79-DCE0-448B-AFD4-DCED18C50897}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{15979E79-DCE0-448B-AFD4-DCED18C50897}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{15979E79-DCE0-448B-AFD4-DCED18C50897}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15979E79-DCE0-448B-AFD4-DCED18C50897}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15979E79-DCE0-448B-AFD4-DCED18C50897}.Release|ARM.ActiveCfg = Release|Any CPU
+		{15979E79-DCE0-448B-AFD4-DCED18C50897}.Release|x64.ActiveCfg = Release|Any CPU
+		{15979E79-DCE0-448B-AFD4-DCED18C50897}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
