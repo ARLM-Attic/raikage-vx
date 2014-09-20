@@ -29,11 +29,17 @@ namespace Raikage.Test.Core.ViewModels
 
         public ICommand TestCommand { get; set; }
 
-        public void Test(object param)
+        public virtual void Test(object param)
         {
             TestCount = (int)param;
         }
+        [AutoCommand("Command1Method", AttributeReplace = true)]
+        public ICommand Command1 { get; set; }
 
+        public virtual void Command1Method(object p)
+        {
+            var x = p;
+        }
         //If Validation Failed Method Will Not Be Called and On Validation Failed Will be Invoked
         //Note That The Current Class Must Implement From IValidable
         [Validate(typeof(FirstViewModelValidator))]

@@ -17,23 +17,16 @@ namespace RaikageFramework.Aspects.Commands
     public class AutoCommand : LocationInterceptionAspect
     {
         private string _method;
-        private string[] _args;
-        private Type[] _parametersTypes;
-        private object[] _parameters;
+
+
         public AutoCommand()
         {
             _method = null;
-            _args = new string[0];
-            _parametersTypes = new Type[0];
+
         }
-        public AutoCommand(string method, string[] args)
+        public AutoCommand(string method)
         {
             _method = method;
-            _args = args;
-            if (args.Length > 0)
-            {
-                _parametersTypes = args.Select(arg => arg.GetType()).ToArray();
-            }
         }
 
         public override void OnGetValue(LocationInterceptionArgs args)
@@ -43,10 +36,8 @@ namespace RaikageFramework.Aspects.Commands
                 if (string.IsNullOrEmpty(_method))
                 {
                     _method = args.LocationName.Replace("Command", string.Empty);
-
                 }
-                GetParameters(args.Instance);
-                var command = args.Location.LocationType;
+
 
                 args.Value = new MvxCommand<object>((param) => args.Instance.GetType()
                     .GetRuntimeMethod(_method, new Type[] { typeof(object) })
@@ -59,13 +50,6 @@ namespace RaikageFramework.Aspects.Commands
         }
 
 
-        private void GetParameters(object instance)
-        {
-            if (_args == null)
-                _parameters = new object[0];
-            _parameters =
-                _args.Select(param => (instance.GetType().GetRuntimeField(param)).GetValue(instance)).ToArray();
 
-        }
     }
 }
