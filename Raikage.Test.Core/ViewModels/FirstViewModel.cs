@@ -15,6 +15,7 @@ namespace Raikage.Test.Core.ViewModels
     public class FirstViewModel
         : BaseMvxViewModel, IValidable
     {
+
         public string Hello { get; set; }
 
         public int TestCount = 0;
@@ -28,9 +29,9 @@ namespace Raikage.Test.Core.ViewModels
 
         public ICommand TestCommand { get; set; }
 
-        public void Test()
+        public void Test(object param)
         {
-            TestCount = 1;
+            TestCount = (int)param;
         }
 
         //If Validation Failed Method Will Not Be Called and On Validation Failed Will be Invoked

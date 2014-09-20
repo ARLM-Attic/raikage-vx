@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Cirrious.MvvmCross.Platform;
 using Cirrious.MvvmCross.ViewModels;
 using PostSharp.Aspects;
 using PostSharp.Serialization;
@@ -42,17 +43,21 @@ namespace RaikageFramework.Aspects.Commands
                 if (string.IsNullOrEmpty(_method))
                 {
                     _method = args.LocationName.Replace("Command", string.Empty);
+
                 }
                 GetParameters(args.Instance);
-                args.Value = new MvxCommand(() => args.Instance.GetType()
-                    .GetRuntimeMethod(_method, _parametersTypes)
-                    .Invoke(args.Instance, _parameters));
+                var command = args.Location.LocationType;
+
+                args.Value = new MvxCommand<object>((param) => args.Instance.GetType()
+                    .GetRuntimeMethod(_method, new Type[] { typeof(object) })
+                    .Invoke(args.Instance, new object[] { param }));
             }
             else
             {
                 args.ProceedGetValue();
             }
         }
+
 
         private void GetParameters(object instance)
         {

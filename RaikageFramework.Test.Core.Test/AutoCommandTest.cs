@@ -12,8 +12,8 @@ namespace RaikageFramework.Test.Core.Test
         {
             var firstviewModel = new FirstViewModel();
             var testCommand = firstviewModel.TestCommand;
-            testCommand.Execute(null);
-            Assert.AreEqual(1, firstviewModel.TestCount);
+            testCommand.Execute(10);
+            Assert.AreEqual(10, firstviewModel.TestCount);
         }
     }
 }
