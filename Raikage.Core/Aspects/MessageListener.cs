@@ -84,15 +84,16 @@ namespace RaikageFramework.Aspects
 
         }
 
-        public override void RuntimeInitialize(MethodBase method)
+        public override bool CompileTimeValidate(MethodBase method)
         {
-            MvxSubscriptionTokens = new List<MvxSubscriptionToken>();
-
-
+            if (!(typeof(MvxMessage).IsAssignableFrom(method.GetParameters().First().ParameterType)))
+                return false;
+            return base.CompileTimeValidate(method);
         }
 
         public override void CompileTimeInitialize(MethodBase method, AspectInfo aspectInfo)
         {
+            MvxSubscriptionTokens = new List<MvxSubscriptionToken>();
             _methods.Add(method);
             _types.Add(method.GetParameters().First().ParameterType);
             base.CompileTimeInitialize(method, aspectInfo);
