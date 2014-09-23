@@ -2,14 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Plugins.Messenger;
-using FluentValidation.Results;
 using PostSharp.Aspects;
 using PostSharp.Aspects.Advices;
-using PostSharp.Aspects.Configuration;
 using PostSharp.Reflection;
 using PostSharp.Serialization;
 
