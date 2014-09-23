@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Input;
 using FluentValidation.Results;
+using Raikage.Test.Core.Messeges;
+using Raikage.Test.Core.Services;
 using Raikage.Test.Core.Validation;
 using RaikageFramework.Aspects;
 using RaikageFramework.Aspects.Commands;
@@ -16,9 +18,16 @@ namespace Raikage.Test.Core.ViewModels
         : BaseMvxViewModel, IValidable
     {
 
+        private readonly ISendMessageService _iSendMessageService;
         public string Hello { get; set; }
 
         public int TestCount = 0;
+
+        public FirstViewModel(ISendMessageService iSendMessageService)
+        {
+            _iSendMessageService = iSendMessageService;
+            this.InitializeMessenger(this);
+        }
 
         //This Command Will Navigate To SecondViewModel,
         //Note That The Current Class Must Inherit From BaseMvxViewModel
@@ -31,14 +40,14 @@ namespace Raikage.Test.Core.ViewModels
 
         public virtual void Test(object param)
         {
-            TestCount = (int)param;
+            _iSendMessageService.SendHello();
         }
         [AutoCommand("Command1Method", AttributeReplace = true)]
         public ICommand Command1 { get; set; }
 
         public virtual void Command1Method(object p)
         {
-            var x = p;
+            _iSendMessageService.SendWorld();
         }
         //If Validation Failed Method Will Not Be Called and On Validation Failed Will be Invoked
         //Note That The Current Class Must Implement From IValidable
@@ -46,6 +55,16 @@ namespace Raikage.Test.Core.ViewModels
         public void Login()
         {
 
+        }
+        [MessageListener]
+        public void ReceiveMessage(TestMessage testMessage)
+        {
+            var x = testMessage;
+        }
+        [MessageListener]
+        public void ReceiveMessage2(TestMessage2 testMessage)
+        {
+            var x = testMessage;
         }
         public void OnValidationFailed(string sender, IList<ValidationFailure> errors)
         {
