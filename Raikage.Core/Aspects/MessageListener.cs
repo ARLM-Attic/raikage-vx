@@ -11,31 +11,6 @@ using PostSharp.Serialization;
 
 namespace RaikageFramework.Aspects
 {
-    public static class MessageTypesStorage
-    {
-        private static IList<Type> _types;
-
-        public static IList<Type> Types
-        {
-            get { return _types ?? (_types = new List<Type>()); }
-        }
-
-
-        private static IList<MethodBase> _methods;
-
-        public static IList<MethodBase> Methods
-        {
-            get { return _methods ?? (_methods = new List<MethodBase>()); }
-        }
-
-        public static void Dispose()
-        {
-            _methods = null;
-            _types = null;
-            Methods.Clear();
-            Types.Clear();
-        }
-    }
     [PSerializable]
     public class MessageListener : OnMethodBoundaryAspect
     {

@@ -10,8 +10,8 @@ namespace Raikage.Test.Core
                 .EndingWith("Service")
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
-				
-            RegisterAppStart<ViewModels.FirstViewModel>();
+
+            RegisterAppStart<ViewModels.SettingsViewModel>();
         }
     }
 }

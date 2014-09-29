@@ -31,7 +31,7 @@ namespace Raikage.Test.Core.ViewModels
 
         //This Command Will Navigate To SecondViewModel,
         //Note That The Current Class Must Inherit From BaseMvxViewModel
-        [MvxNavigationCommand(typeof(SecondViewModel))]
+        [MvxNavigationCommand(typeof(SettingsViewModel))]
         public ICommand GoNext { get; set; }
 
         public ICommand LoginCommand { get; set; }
