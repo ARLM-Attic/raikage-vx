@@ -11,6 +11,7 @@
         <StackPanel>
             <Button Command="{Binding TestCommand}" Content="Send Message"></Button>
             <Button Command="{Binding Command1}" Content="Send Message2"></Button>
+            <Button Command="{Binding GoNext}" Content="Go Next"></Button>
         </StackPanel>
     </Grid>
 </views:MvxWindowsPage>

@@ -11,7 +11,7 @@ namespace Raikage.Test.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            RegisterAppStart<ViewModels.SettingsViewModel>();
+            RegisterAppStart<ViewModels.FirstViewModel>();
         }
     }
 }

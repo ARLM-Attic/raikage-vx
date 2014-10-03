@@ -26,12 +26,14 @@ namespace Raikage.Test.Core.ViewModels
         public FirstViewModel(ISendMessageService iSendMessageService)
         {
             _iSendMessageService = iSendMessageService;
+            Hello = "hello";
             this.InitializeMessenger(this);
         }
 
         //This Command Will Navigate To SecondViewModel,
         //Note That The Current Class Must Inherit From BaseMvxViewModel
-        [MvxNavigationCommand(typeof(SettingsViewModel))]
+        [MvxNavigationCommand(typeof(SettingsViewModel), typeof(FirstViewModelValidator))]
+        [AutoCommand(AttributeExclude = true)]
         public ICommand GoNext { get; set; }
 
         public ICommand LoginCommand { get; set; }
@@ -68,6 +70,7 @@ namespace Raikage.Test.Core.ViewModels
         }
         public void OnValidationFailed(string sender, IList<ValidationFailure> errors)
         {
+            var x = errors;
             //Handle Vaildation Failure
         }
     }
