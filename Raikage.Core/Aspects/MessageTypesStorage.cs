@@ -14,6 +14,12 @@ namespace RaikageFramework.Aspects
             get { return _types ?? (_types = new List<Type>()); }
         }
 
+        private static IList<Type> _instancetypes;
+
+        public static IList<Type> InstanceTypes
+        {
+            get { return _instancetypes ?? (_instancetypes = new List<Type>()); }
+        }
 
         private static IList<MethodBase> _methods;
 
